@@ -1,0 +1,12 @@
+<% content_for :title, "Editing repost" %>
+
+<h1>Editing repost</h1>
+
+<%= render "form", repost: @repost %>
+
+<br>
+
+<div>
+  <%= link_to "Show this repost", @repost %> |
+  <%= link_to "Back to reposts", reposts_path %>
+</div>
