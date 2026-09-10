@@ -33,18 +33,15 @@
   </div>
 
   <nav class="nav-logo">
-  <%= link_to root_path,
-      class: ["nav-item", ("active" if current_page?(root_path) || current_page?(home_index_path))].compact.join(" ") do %>
+  <%= link_to root_path, class: ["nav-item", ("active" if current_page?(root_path) || current_page?(home_index_path))].compact.join(" ") do %>
     <ruby>オニュー<rt>タイムライン</rt></ruby><span class="ya">羽衣</span>
   <% end %>
 
-  <%= link_to ranking_index_path,
-      class: ["nav-item", ("active" if current_page?(ranking_index_path))].compact.join(" ") do %>
+  <%= link_to ranking_index_path, class: ["nav-item", ("active" if current_page?(ranking_index_path))].compact.join(" ") do %>
     <ruby>ハイカラ<rt>ランキング</rt></ruby><span class="ya">番付</span>
   <% end %>
 
-  <%= link_to new_post_path,
-      class: ["nav-item", ("active" if current_page?(new_post_path))].compact.join(" ") do %>
+  <%= link_to new_post_path, class: ["nav-item", ("active" if current_page?(new_post_path))].compact.join(" ") do %>
     <ruby>ハゴロモ<rt>コーデ投稿</rt></ruby><span class="ya">自慢</span>
   <% end %>
 </nav>

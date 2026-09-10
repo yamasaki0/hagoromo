@@ -1,13 +1,9 @@
 <main>
 
-  <% content_for :header_content do %>
-
-  <% end %>
-
   <nav class="site-header-nav">
     <%= form_with url: "#", method: :get, class: "search-area" do |form| %>
       <%= form.search_field :tag, placeholder: "#古着 #ストリート #ワンポイント #地雷系..." %>
-      <%= form.submit "ディグる！" %>
+      <%= form.submit "検索" %>
     <% end %>
   </nav>
 
