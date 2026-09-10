@@ -207,24 +207,24 @@ main {
     }
 
     .logo {
-        font-size: 24px;
+        font-size: 27px;
     }
 
     .logo .ya {
-        font-size: 40px;
+        font-size: 43px;
     }
 
 
     .current-page {
         display: block;
-        font-size: 18px;
+        font-size: 21px;
         font-weight: 800;
         letter-spacing: -1px;
     }
 
     .current-page .ya {
         font-family: serif;
-        font-size: 30px;
+        font-size: 33px;
         margin-left: 2px;
     }
 
@@ -240,12 +240,12 @@ main {
 
     .nav-item {
         padding: 10px 2px;
-        font-size: 15px;
+        font-size: 18px;
         text-align: center;
     }
 
     .nav-item .ya {
-        font-size: 26px;
+        font-size: 29px;
     }
 
     .nav-item rt {
