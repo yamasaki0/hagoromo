@@ -1,0 +1,44 @@
+<main>
+
+  <% content_for :header_content do %>
+
+  <% end %>
+
+  <nav class="site-header-nav">
+    <%= form_with url: "#", method: :get, class: "search-area" do |form| %>
+      <%= form.search_field :tag, placeholder: "#古着 #ストリート #ワンポイント #地雷系..." %>
+      <%= form.submit "ディグる！" %>
+    <% end %>
+  </nav>
+
+  <section class="timeline">
+    
+        <% if @posts.empty? %>
+            <p>お目当てのハゴロモが見つからないようでありんす。</p>
+            <p>……つまりアンタが<ruby>最先端<rt>パイオニア</rt>じゃ！</p>
+        <% else %>
+            <div class="posts">
+        
+            <% @posts.each do |post| %>
+            <article class="post-card">
+                <% if post.image.attached? %>
+                <%= image_tag post.image, class: "post-image" %>
+                <% end %>
+
+            <div class="tags">
+                <% post.tags.each do |tag| %>
+                <span>#<%= tag.name %></span>
+                <% end %>
+            </div>
+
+            <div class="reactions">
+                <button>ハイカラさんね！</button>
+                <button>超ド級ハイカラ！</button>
+                <button>↻</button>
+            </div>
+            </article>
+            <% end %>
+        <% end %>
+    </div>
+  </section>
+</main>

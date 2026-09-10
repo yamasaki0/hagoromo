@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get "ranking/index"
+  root "home#index"
+
+  get "home/index"
+  get "ranking/index"
   resources :tag_bookmarks
   resources :reposts
   resources :reactions

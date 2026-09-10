@@ -1,10 +1,316 @@
 /*
  * This is a manifest file that'll be compiled into application.css.
  *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
+ * With Propshaft, assets are served efficiently without preprocessing steps.
  */
+
+/* =========================
+   基本
+   ========================= */
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #fafafa;
+    color: #111;
+}
+
+.locationlabel {
+    color: #d8074d;
+}
+
+main {
+    width: min(100% - 32px, 900px);
+    margin: 32px auto;
+}
+
+
+/* =========================
+   ヘッダー
+   ========================= */
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 32px;
+    border-bottom: 1px solid #ddd;
+    background: white;
+}
+
+.site-header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.logo .ya {
+    font-family: serif;
+    font-size: 55px;
+    margin-left: 4px;
+}
+
+
+.current-page {
+    display: none;
+}
+
+.site-header nav {
+    display: flex;
+    gap: 20px;
+}
+
+.hidden-nav {
+    display: none;
+}
+
+
+/* =========================
+   ナビゲーション
+   ========================= */
+
+.nav-logo {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 8px;
+
+    color: #111;
+    text-decoration: none;
+
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -1px;
+
+    border-bottom: 4px solid transparent;
+}
+
+.nav-item.active {
+    color: #d00000;
+    border-bottom-color: #d00000;
+}
+
+.nav-item .ya {
+    font-family: serif;
+    font-size: 38px;
+    margin-left: 2px;
+}
+
+
+/* =========================
+   検索
+   ========================= */
+
+.search-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-area input {
+    width: 75%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    font-size: 16px;
+}
+
+.search-area input[type="submit"] {
+    width: 25%;
+    border: none;
+    outline: none;
+    background: #333;
+    color: #fff;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   投稿
+   ========================= */
+
+.posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.post-card {
+    background: white;
+}
+
+.post-image {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+.tags {
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 14px;
+}
+
+.reactions {
+    display: flex;
+    gap: 6px;
+    padding-bottom: 12px;
+}
+
+.reactions button {
+    border: 1px solid #ccc;
+    background: white;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   スマートフォン
+   ========================= */
+
+@media (max-width: 700px) {
+
+    .site-header {
+        display: block;
+    }
+
+    .header-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .logo .ya {
+        font-size: 40px;
+    }
+
+
+    .current-page {
+        display: block;
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: -1px;
+    }
+
+    .current-page .ya {
+        font-family: serif;
+        font-size: 30px;
+        margin-left: 2px;
+    }
+
+
+    /* ナビ */
+
+    .nav-logo {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    .nav-item {
+        padding: 10px 2px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .nav-item .ya {
+        font-size: 26px;
+    }
+
+    .nav-item rt {
+        font-size: 7px;
+    }
+
+    /* ヘッダーナビ */
+
+    .site-header nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        font-size: 13px;
+    }
+
+    .site-header nav a {
+        flex: 1;
+        text-align: center;
+    }
+
+
+    /* メイン */
+
+    main {
+        width: calc(100% - 24px);
+        margin: 24px auto;
+    }
+
+
+    /* 検索 */
+
+    .search-area {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .search-area input {
+        width: 100%;
+    }
+
+    .search-area input[type="submit"] {
+        width: 100%;
+        padding: 12px 16px;
+    }
+
+
+    /* 投稿 */
+
+    .posts {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .tags {
+        font-size: 12px;
+    }
+
+    .reactions {
+        flex-wrap: wrap;
+    }
+
+    .reactions button {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+}
