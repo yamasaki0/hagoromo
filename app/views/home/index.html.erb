@@ -2,7 +2,7 @@
 
   <nav class="site-header-nav">
     <%= form_with url: "#", method: :get, class: "search-area" do |form| %>
-      <%= form.search_field :tag, placeholder: "#古着 #ストリート #ワンポイント #地雷系..." %>
+      <%= form.search_field :tag, placeholder: "#古着 #ストリート #アラサー #ワンポイント..." %>
       <%= form.submit "検索" %>
     <% end %>
   </nav>
@@ -10,7 +10,7 @@
   <section class="timeline">
     
         <% if @posts.empty? %>
-            <p>お目当てのハゴロモが見つからないようでありんす。</p>
+            <p>お目当てのハゴロモが見つからぬ。</p>
             <p>……つまりアンタが<ruby>最先端<rt>パイオニア</rt>じゃ！</p>
         <% else %>
             <div class="posts">

@@ -42,7 +42,8 @@ main {
 .header-top {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    flex-shrink: 0;
 }
 
 .logo {
@@ -57,6 +58,27 @@ main {
     font-family: serif;
     font-size: 55px;
     margin-left: 4px;
+}
+
+.brand-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: nowrap;
+}
+
+.brand-copy {
+    font-size: 8px;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    color: #777;
+    white-space: nowrap;
+}
+
+.brand-copy p {
+    margin: 0;
 }
 
 

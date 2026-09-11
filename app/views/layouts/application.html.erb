@@ -10,14 +10,11 @@
 
     <%# Enable PWA manifest for installable apps %>
     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
-
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
-
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <link rel="icon" href="/favicon.ico">
 
     <%# 本来の<head>内に挿入したいCSS/JS/メタタグ用 %>
     <%= yield :head %>
@@ -26,11 +23,20 @@
   <body>
 
 <header class="site-header">
-  <div class="header-top">
+<div class="header-top">
+  <div class="brand-block">
     <div class="logo">
       <ruby>856MO<rt>ハゴロモ</rt></ruby><span class="ya">百貨</span>
     </div>
+
+    <div class="brand-copy">
+      <p>HAutestyle with zero social noise.</p>
+      <p>GO straight for real fashion.</p>
+      <p>LOok through timeless, peak taste.</p>
+      <p>MOdern hagoromo on the street.</p>
+    </div>
   </div>
+</div>
 
   <nav class="nav-logo">
   <%= link_to root_path, class: ["nav-item", ("active" if current_page?(root_path) || current_page?(home_index_path))].compact.join(" ") do %>
