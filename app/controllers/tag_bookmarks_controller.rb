@@ -58,13 +58,14 @@ class TagBookmarksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_tag_bookmark
-      @tag_bookmark = TagBookmark.find(params.expect(:id))
-    end
 
-    # Only allow a list of trusted parameters through.
-    def tag_bookmark_params
-      params.expect(tag_bookmark: [ :user_id, :tag_id ])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_tag_bookmark
+    @tag_bookmark = TagBookmark.find(params.expect(:id))
+  end
+
+  # Only allow a list of trusted parameters through.
+  def tag_bookmark_params
+    params.expect(tag_bookmark: [:user_id, :tag_id])
+  end
 end

@@ -7,57 +7,42 @@
     <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%# Enable PWA manifest for installable apps %>
     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-
     <link rel="icon" href="/favicon.ico">
-
     <%# 本来の<head>内に挿入したいCSS/JS/メタタグ用 %>
     <%= yield :head %>
   </head>
-
   <body>
-
-<header class="site-header">
-<div class="header-top">
-  <div class="brand-block">
-    <div class="logo">
-      <ruby>856MO<rt>ハゴロモ</rt></ruby><span class="ya">百貨</span>
-    </div>
-
-    <div class="brand-copy">
-      <p>HAutestyle with zero social noise.</p>
-      <p>GO straight for real fashion.</p>
-      <p>LOok through timeless, peak taste.</p>
-      <p>MOdern hagoromo on the street.</p>
-    </div>
-  </div>
-</div>
-
-  <nav class="nav-logo">
-  <%= link_to root_path, class: ["nav-item", ("active" if current_page?(root_path) || current_page?(home_index_path))].compact.join(" ") do %>
-    <ruby>オニュー<rt>タイムライン</rt></ruby><span class="ya">羽衣</span>
-  <% end %>
-
-  <%= link_to ranking_index_path, class: ["nav-item", ("active" if current_page?(ranking_index_path))].compact.join(" ") do %>
-    <ruby>ハイカラ<rt>ランキング</rt></ruby><span class="ya">番付</span>
-  <% end %>
-
-  <%= link_to new_post_path, class: ["nav-item", ("active" if current_page?(new_post_path))].compact.join(" ") do %>
-    <ruby>ハゴロモ<rt>コーデ投稿</rt></ruby><span class="ya">自慢</span>
-  <% end %>
-</nav>
-
-
-</header>
-
-
+    <header class="site-header">
+      <div class="header-top">
+        <div class="brand-block">
+          <div class="logo">
+            <ruby>856MO<rt>ハゴロモ</rt></ruby><span class="ya">百貨</span>
+          </div>
+          <div class="brand-copy">
+            <p>HAutestyle with zero social noise.</p>
+            <p>GO straight for real fashion.</p>
+            <p>LOok through timeless, peak taste.</p>
+            <p>MOdern hagoromo on the street.</p>
+          </div>
+        </div>
+      </div>
+      <nav class="nav-logo">
+        <%= link_to root_path, class: ["nav-item", ("active" if current_page?(root_path) || current_page?(home_index_path))].compact.join(" ") do %>
+          <ruby>オニュー<rt>タイムライン</rt></ruby><span class="ya">羽衣</span>
+        <% end %>
+        <%= link_to ranking_index_path, class: ["nav-item", ("active" if current_page?(ranking_index_path))].compact.join(" ") do %>
+          <ruby>ハイカラ<rt>ランキング</rt></ruby><span class="ya">番付</span>
+        <% end %>
+        <%= link_to new_post_path, class: ["nav-item", ("active" if current_page?(new_post_path))].compact.join(" ") do %>
+          <ruby>ハゴロモ<rt>コーデ投稿</rt></ruby><span class="ya">自慢</span>
+        <% end %>
+      </nav>
+    </header>
     <%= yield %>
-
-</body>
-
+  </body>
 </html>

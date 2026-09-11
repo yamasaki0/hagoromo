@@ -58,13 +58,14 @@ class RepostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_repost
-      @repost = Repost.find(params.expect(:id))
-    end
 
-    # Only allow a list of trusted parameters through.
-    def repost_params
-      params.expect(repost: [ :user_id, :post_id ])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_repost
+    @repost = Repost.find(params.expect(:id))
+  end
+
+  # Only allow a list of trusted parameters through.
+  def repost_params
+    params.expect(repost: [:user_id, :post_id])
+  end
 end

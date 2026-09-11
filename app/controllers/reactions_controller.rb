@@ -58,13 +58,14 @@ class ReactionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_reaction
-      @reaction = Reaction.find(params.expect(:id))
-    end
 
-    # Only allow a list of trusted parameters through.
-    def reaction_params
-      params.expect(reaction: [ :user_id, :post_id, :kind ])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_reaction
+    @reaction = Reaction.find(params.expect(:id))
+  end
+
+  # Only allow a list of trusted parameters through.
+  def reaction_params
+    params.expect(reaction: [:user_id, :post_id, :kind])
+  end
 end
