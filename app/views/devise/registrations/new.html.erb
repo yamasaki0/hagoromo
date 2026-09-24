@@ -1,13 +1,10 @@
 <h2>Sign up</h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-
   <div class="field">
     <p><%= f.label :email %></p>
     <p><%= f.email_field :email, autofocus: true, autocomplete: "email" %></p>
   </div>
-
   <div class="field">
     <p><%= f.label :password %></p>
     <% if @minimum_password_length %>
@@ -15,15 +12,45 @@
     <% end %>
     <p><%= f.password_field :password, autocomplete: "new-password" %></p>
   </div>
-
   <div class="field">
     <p><%= f.label :password_confirmation %></p>
     <p><%= f.password_field :password_confirmation, autocomplete: "new-password" %></p>
   </div>
-
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
 <%= render "devise/shared/links" %>
+<main class="auth-page">
+  <section class="auth-card">
+    <div class="logo">
+      <ruby>シンガオ<rt>サインアップ</rt></ruby><span class="ya">来店</span>
+    </div>
+    <p class="auth-lead">
+    </p>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "auth-form" }) do |f| %>
+      <div class="field">
+        <%= f.label :email, "メールアドレス" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "hagoromo@example.com" %>
+      </div>
+      <div class="field">
+        <%= f.label :password, "パスワード" %>
+        <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
+      <% if devise_mapping.rememberable? %>
+        <div class="remember-field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me, "しばらく居座る" %>
+        </div>
+      <% end %>
+      <div class="actions">
+        <%= f.submit "ヨッテク入店" %>
+      </div>
+    <% end %>
+    <div class="auth-links">
+      <%= link_to "ハジメテ入店", new_registration_path(resource_name) %>
+      <%= link_to "パスワードを忘れたのかい？",
+                  new_password_path(resource_name) %>
+    </div>
+  </section>
+</main>

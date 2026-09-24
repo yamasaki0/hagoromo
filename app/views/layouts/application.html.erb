@@ -19,16 +19,21 @@
   <body>
     <header class="site-header">
       <div class="header-top">
-        <div class="brand-block">
-          <div class="logo">
-            <ruby>856MO<rt>ハゴロモ</rt></ruby><span class="ya">百貨</span>
-          </div>
-          <div class="brand-copy">
-            <p>HAutestyle with zero social noise.</p>
-            <p>GO straight for real fashion.</p>
-            <p>LOok through timeless, peak taste.</p>
-            <p>MOdern hagoromo on the street.</p>
-          </div>
+        <div class="logo">
+          <ruby>856MO<rt>ハゴロモ</rt></ruby><span class="ya">百貨</span>
+        </div>
+        <div class="auth-ticket">
+          <% if user_signed_in? %>
+            <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "auth-ticket-link" do %>
+              <span>ログアウト</span>
+              <strong>退店</strong>
+            <% end %>
+          <% else %>
+            <%= link_to new_user_session_path, class: "auth-ticket-link" do %>
+              <span>ログイン</span>
+              <strong>入店</strong>
+            <% end %>
+          <% end %>
         </div>
       </div>
       <nav class="nav-logo">
