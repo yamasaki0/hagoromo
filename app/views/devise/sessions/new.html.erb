@@ -3,7 +3,7 @@
     <div class="logo">
       <ruby>ヨリミチ<rt>サインイン</rt></ruby><span class="ya">入店</span>
     </div>
-    <p class="auth-lead">そこのハイカラさ～ん、ちょいと寄っていきなんし♪</p>
+    <p class="auth-lead">そこのハイカラさ～ん、ヨリミチして行かないかい？</p>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "auth-form" }) do |f| %>
       <div class="field">
         <%= f.label :email, "メールアドレス" %>
@@ -20,12 +20,12 @@
         </div>
       <% end %>
       <div class="actions">
-        <%= f.submit "ログイン" %>
+        <%= f.submit "サインイン" %>
       </div>
     <% end %>
     <div class="auth-links">
-      <%= link_to "シンガオ来店（サインアップ）", new_registration_path(resource_name) %>
-      <%= link_to "パスワードを忘れたのかい？", new_password_path(resource_name) %>
+      <%= link_to "サインアップ", new_registration_path(resource_name) %>
+      <%= link_to "パスワード忘れちゃった？", new_password_path(resource_name) %>
     </div>
   </section>
 </main>
